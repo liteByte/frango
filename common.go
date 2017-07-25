@@ -3,7 +3,7 @@ package frango
 import (
 	"encoding/json"
 	"fmt"
-	"ioutil"
+	"io/ioutil"
 
 	"github.com/gin-gonic/gin"
 )
