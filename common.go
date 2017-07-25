@@ -1,7 +1,11 @@
 package frango
 
 import (
+	"encoding/json"
 	"fmt"
+	"ioutil"
+
+	"github.com/gin-gonic/gin"
 )
 
 func ParseRequestBody(c *gin.Context) map[string]interface{} {
