@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,6 +18,12 @@ func ParseRequestBody(c *gin.Context) map[string]interface{} {
 	}
 
 	return data
+}
+
+func LogErr(err error) {
+	if err != nil {
+		log.Println(err.Error())
+	}
 }
 
 func PrintErr(err error) {
