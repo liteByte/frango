@@ -19,6 +19,7 @@ func CreateFile(filePath string, content string) error {
 	if err != nil {
 		return err
 	}
+	defer file.Close()
 
 	file.WriteString(content)
 
