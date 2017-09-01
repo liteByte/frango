@@ -84,3 +84,13 @@ func Hash(salt string, data string) string {
 	hashedData := base64.URLEncoding.EncodeToString(hasher.Sum(nil))
 	return hashedData
 }
+
+func GetRandomString(n int) string {
+	letterBytes := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+	b := make([]byte, n)
+	for i := range b {
+		b[i] = letterBytes[rand.Intn(len(letterBytes))]
+	}
+	return string(b)
+}
