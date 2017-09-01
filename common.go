@@ -77,3 +77,10 @@ func PrintSQLQuery(query string, args ...interface{}) string {
 	}
 	return buffer.String()
 }
+
+func Hash(salt string, data string) string {
+	hasher := sha1.New()
+	hasher.Write([]byte(salt + data))
+	hashedData := base64.URLEncoding.EncodeToString(hasher.Sum(nil))
+	return hashedData
+}
