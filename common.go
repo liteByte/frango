@@ -2,11 +2,14 @@ package frango
 
 import (
 	"bytes"
+	"crypto/sha1"
 	"database/sql"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"strings"
 
 	"github.com/gin-gonic/gin"
