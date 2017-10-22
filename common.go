@@ -97,3 +97,7 @@ func GetRandomString(n int) string {
 	}
 	return string(b)
 }
+
+func GetRandomInt(min, max int) int {
+	return min + rand.Intn(max+1-min)
+}
