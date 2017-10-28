@@ -23,3 +23,14 @@ func RemoveLastCharacters(s string, n int) string {
 	bytes := StringToByteArray(s)
 	return string(bytes[0 : len(bytes)-n])
 }
+
+func RemoveCharactersUntilSubstring(s, substring string) string {
+	substrings := strings.Split(s, substring)
+	output := ""
+
+	for i := 1; i < len(substrings); i++ {
+		output += substrings[i] + substring
+	}
+
+	return RemoveLastCharacters(output, len(substring))
+}

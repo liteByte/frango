@@ -11,6 +11,7 @@ import (
 	"log"
 	"math/rand"
 	"strings"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -86,6 +87,10 @@ func Hash(salt string, data string) string {
 	hasher.Write([]byte(salt + data))
 	hashedData := base64.URLEncoding.EncodeToString(hasher.Sum(nil))
 	return hashedData
+}
+
+func SeedRandom() {
+	rand.Seed(time.Now().UnixNano())
 }
 
 func GetRandomString(n int) string {
