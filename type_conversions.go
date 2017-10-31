@@ -66,6 +66,10 @@ func StringToStringSlice(dataString string, separator string) []string {
 	return dataStringSlice
 }
 
+func StringToFloat64(dataString string) float64 {
+	return strconv.ParseFloat(dataString, 64)
+}
+
 /* -----------Byte Array----------- */
 
 func ByteArrayToInt(dataByteArray []byte) int {
