@@ -2,7 +2,6 @@ package frango
 
 import (
 	"log"
-	"os"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -14,11 +13,12 @@ func PrintS3Buckets(region string) {
 
 	result, err := svc.ListBuckets(&s3.ListBucketsInput{})
 	if err != nil {
-		log.Println("Failed to list buckets", err)
+		log.Println("Failed to list buckets: ", err)
 		return
 	}
 
-	log.Println("Buckets:")
+	log.Println("Buckets: ")
+
 	for _, bucket := range result.Buckets {
 		log.Printf("%s : %s\n", aws.StringValue(bucket.Name), bucket.CreationDate)
 	}
