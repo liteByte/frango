@@ -82,6 +82,10 @@ func PrintSQLQuery(query string, args ...interface{}) string {
 	return buffer.String()
 }
 
+func PrintStruct(data ...interface{}) {
+	fmt.Printf("%+v\n", data)
+}
+
 func Hash(salt string, data string) string {
 	hasher := sha1.New()
 	hasher.Write([]byte(salt + data))
